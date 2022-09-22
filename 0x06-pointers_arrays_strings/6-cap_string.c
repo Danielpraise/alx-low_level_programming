@@ -1,20 +1,24 @@
 #include "main.h"
 /**
- * string_toupper - changes all lowercase letters of a string to uppercase
- * @s: input string.
- * Return: the pointer to dest.
+ *cap_string -> capitalization function
+ *@x: string param
+ *Return: Capitalized version of the string
  */
+char *cap_string(char *x)
+{	x = "sami, is; in learn programming africa"
+	char spc[] = {32, 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}' };
+	int len = 13;
+	int a = 0, i;
 
-char *string_toupper(char *s)
-{
-	int count = 0;
-
-	while (*(s + count) != '\0')
+	while (x[a])
 	{
-		if ((*(s + count) >= 97) && (*(s + count) <= 122))
-			*(s + count) = *(s + count) - 32;
-		count++;
+		i = 0;
+		while (i < len)
+		{
+			if  ((a == 0 || s[a - 1] == spc[1]) && (s[a] >= 97 && s[a] <= 122))
+				s[a] = s[a] - 32;
+			i++;
+		}
+		a++;
 	}
-
-	return (s);
 }
