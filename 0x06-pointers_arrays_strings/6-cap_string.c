@@ -21,6 +21,5 @@ char *cap_string(char *x)
 		}
 		a++;
 	}
-	printf("%s", x);
 	return (x);
 }
